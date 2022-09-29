@@ -3,7 +3,8 @@
   padding: 0;
   margin: 0;
 }
-body{
+
+body {
   background-color: antiquewhite;
 }
 
@@ -12,6 +13,7 @@ header {
   margin: 0 40px;
   padding: 20px;
 }
+
 #form {
   margin: 0 60px;
 }
