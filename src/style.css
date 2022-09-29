@@ -5,8 +5,8 @@
 }
 
 .container,
-header  {
-  margin:  0 40px;
+header {
+  margin: 0 40px;
   padding: 20px;
 }
 
@@ -24,6 +24,5 @@ header  {
   margin: 10px;
   gap: 10px;
   display: flex;
-
- text-align: justify;
+  text-align: justify;
 }
