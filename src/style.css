@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  align-self: flex-start;
+  width: 80%;
+}
+
+.inner-info {
+  margin: 10px;
+  gap: 5px;
+  display: flex;
+  justify-content: baseline;
+}
