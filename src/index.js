@@ -2,19 +2,6 @@
 import _ from 'lodash';
 import './style.css';
 
-/*
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
-*/
 const toDoItems = [
   {
     info: 'Wash the dishes',
@@ -43,8 +30,9 @@ toDoItems.forEach((val) => {
       <div class = "inner-info">
         <input type="checkbox">
         <span>${val.info}</span>
+        </div>
         <i class="fa-solid fa-ellipsis-vertical" ></i>
-      </div>
+      
   </div>
   `;
   itemsContainer.appendChild(divElement);
