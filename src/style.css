@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+.container,
+header {
+  margin: 0 40px;
+  padding: 20px;
+}
+
+#form {
+  margin: 0 60px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.inner-info {
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  text-align: justify;
+}
