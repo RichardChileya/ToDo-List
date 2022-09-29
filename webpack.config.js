@@ -22,4 +22,10 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    watchFiles: ['src/*'],
+    hot: true,
+    // static: './dist',
+  },
+
 };

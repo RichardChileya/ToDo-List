@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import _ from 'lodash';
 import './style.css';
 
 const toDoItems = [
@@ -27,12 +25,11 @@ toDoItems.forEach((val) => {
   divElement.className = 'list-item';
   divElement.innerHTML = `
   <div class = "info">
-      <div class = "inner-info">
+      <div class ="inner-info">
         <input type="checkbox">
         <span>${val.info}</span>
-        </div>
         <i class="fa-solid fa-ellipsis-vertical" ></i>
-      
+      </div>
   </div>
   `;
   itemsContainer.appendChild(divElement);

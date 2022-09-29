@@ -3,11 +3,17 @@
   padding: 0;
   margin: 0;
 }
+body{
+  background-color: antiquewhite;
+}
 
 .container,
 header {
   margin: 0 40px;
   padding: 20px;
+}
+#form {
+  margin: 0 60px;
 }
 
 .info {
