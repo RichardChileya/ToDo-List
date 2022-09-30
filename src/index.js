@@ -1,4 +1,6 @@
 import './style.css';
+// eslint-disable-next-line no-unused-vars
+import Task from './modules/tasks.js';
 
 const form = document.querySelector('form');
 const input = document.querySelector('.input');
