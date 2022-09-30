@@ -14,23 +14,28 @@ header {
   padding: 20px;
 }
 
-#form {
-  margin: 0 60px;
-}
-
-.info {
+.inputBox {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #c2c9;
   align-items: center;
   width: 80%;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 
-.inner-info {
-  margin: 10px;
+.newInput {
+  padding: 5px;
+  margin: 2px;
   gap: 10px;
-  display: flex;
-  text-align: justify;
+}
+
+.arrow {
+  opacity: 1;
+  pointer-events: none;
+  color: blue;
+}
+
+#input {
+  height: 40px;
+  margin: 10px 15px;
 }

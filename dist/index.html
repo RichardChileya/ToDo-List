@@ -4,27 +4,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/171fcd9d48.js" crossorigin="anonymous"></script>
-  <title>ToDo List</title>
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/95c0469538.js" crossorigin="anonymous"></script>
 <script defer src="main.js"></script></head>
 <body>
-  <header class="header">
-    <h1>My ToDo List</h1>
-  </header>
+  <main>
+    <section class="container">
+      <header>
+        <h2 class="todoHeader">MY ToDo List</h2>
+      </header>
 
-  <div class="container">
-      <div class="input-arrow">
-        <input type="text" placeholder="Todo list..." />
-      <i class="fa-sharp fa-solid fa-arrow-left-long"></i>
-      </div>
-      
-    <ul class="list-container">
-      <!-- Create code dynamically here  -->
-    </ul>
-    <button>Clear All Completed </button>
-  </div>
-  
-
-  <script src="./index.js"></script>
+      <section>
+        <form>
+          <div class="inputBox">
+            <input type="text" class="input" id="input" placeholder=" new todo task">
+          <i class="fa-solid fa-arrows-rotate arrow"></i>
+          </div>
+          <div class="error"></div>
+          
+        
+        </form>
+        <div class="todoContainer">
+          <!-- Dynamic Code Here -->
+        </div>
+        <div class="clear">
+          <button type="button" id="clear-completed" class="clearAllTasks">Clear all completed</button>
+        </div>
+      </section>
+    </section>
+  </main>
 </body>
 </html>
