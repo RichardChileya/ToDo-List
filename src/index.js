@@ -9,7 +9,7 @@ let todos = JSON.parse(localStorage.getItem('todos')) || [];
 const store = () => {
   todo = {
     Description: input.value,
-    id: todos.length,
+    id: todos.length + 1,
     completed: false,
   };
   todos.push(todo);
@@ -76,4 +76,5 @@ form.addEventListener('submit', (e) => {
     const errorMsg = document.querySelector('.error');
     errorMsg.innerHTML = ' Please enter your task';
   }
+  localStorage.setItem('todos', JSON.stringify(todos));
 });
