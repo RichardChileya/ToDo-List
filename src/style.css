@@ -27,7 +27,7 @@ header {
   padding: 5px;
   margin: 2px;
   gap: 10px;
- }
+}
 
 .arrow {
   opacity: 1;
@@ -35,7 +35,7 @@ header {
   color: blue;
 }
 
-#input{
+#input {
   height: 40px;
   margin: 10px 15px;
 }
