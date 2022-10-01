@@ -1,82 +1,52 @@
+import Action from './modules/tasks.js';
 import './style.css';
-// eslint-disable-next-line no-unused-vars
-import Task from './modules/tasks.js';
 
-const form = document.querySelector('form');
-const input = document.querySelector('.input');
-const todoContainer = document.querySelector('.todoContainer');
+// Display list of todo items in localstorage
+Action.displaySavedItems();
 
-let todo;
-let todos = JSON.parse(localStorage.getItem('todos')) || [];
-const store = () => {
-  todo = {
-    Description: input.value,
-    id: todos.length + 1,
-    completed: false,
-  };
-  todos.push(todo);
-  localStorage.setItem('todos', JSON.stringify(todos));
-};
+const enterInput = document.querySelector('#user__input__btn');
+const enterField = document.querySelector('#user__input__field');
+const clearAll = document.querySelector('#clear__all');
 
-const clear = () => {
-  input.value = '';
-};
+const addItemToDomOnEnter = () => {
+  const inputField = document.querySelector('#user__input__field');
+  const allTodos = JSON.parse(localStorage.getItem('allTodos')) || [];
+  const { value } = inputField;
+  if (value) {
+    const itemObj = {
+      description: value,
+      completed: false,
+      index: allTodos.length + 1,
+    };
 
-const removeBook = (id) => {
-  todos = todos.filter((books) => books.id !== id);
-  todos.forEach((todo, id) => {
-    todo.id = id;
-  });
-  localStorage.setItem('todos', JSON.stringify(todos));
-};
+    Action.addItemToDom(itemObj);
+    const updatedTodos = [...allTodos, itemObj];
+    localStorage.setItem('allTodos', JSON.stringify(updatedTodos));
 
-const addTask = (todo) => {
-  const ul = document.createElement('div');
-  const checkBox = document.createElement('input');
-  checkBox.type = 'checkbox';
-  checkBox.classList.add('checkBox');
-  const newInp = document.createElement('input');
-  newInp.type = 'text';
-  newInp.classList.add('newInput');
-  newInp.value = todo.Description;
-  const icon = document.createElement('i');
-  icon.classList.add('fa-solid');
-  icon.classList.add('fa-ellipsis-vertical');
-  icon.classList.add('dots');
-
-  ul.append(checkBox, newInp, icon);
-  todoContainer.append(ul);
-  icon.addEventListener('click', () => {
-    icon.parentElement.remove();
-    removeBook(todo.id);
-  });
-};
-todos.forEach(addTask);
-
-const editTodoList = () => {
-  const editInput = document.querySelectorAll('.newInput');
-  editInput.forEach((edits, indexy) => {
-    edits.addEventListener('change', () => {
-      todos.forEach((todo, index) => {
-        if (indexy === index) {
-          todo.Description = edits.value;
-          localStorage.setItem('todos', JSON.stringify(todos));
-        }
-      });
-    });
-  });
-};
-editTodoList();
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (input.value !== '') {
-    store();
-    addTask(todo);
-    clear();
-  } else {
-    const errorMsg = document.querySelector('.error');
-    errorMsg.innerHTML = ' Please enter your task';
+    inputField.value = '';
   }
-  localStorage.setItem('todos', JSON.stringify(todos));
+};
+
+enterInput.addEventListener('click', addItemToDomOnEnter);
+
+enterField.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    addItemToDomOnEnter();
+    event.preventDefault();
+  }
+});
+
+clearAll.addEventListener('click', () => {
+  const completedItem = document.querySelectorAll('.completed');
+  completedItem.forEach((val) => val.parentElement.parentElement.remove());
+
+  const allTodos = JSON.parse(localStorage.getItem('allTodos'));
+  const filteredTodos = allTodos.filter((val) => val.completed === false);
+  filteredTodos.forEach((val, i) => {
+    val.index = i + 1;
+  });
+  if (filteredTodos.length > 0) {
+    window.location.reload();
+  }
+  localStorage.setItem('allTodos', JSON.stringify(filteredTodos));
 });
