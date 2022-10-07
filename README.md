@@ -2,7 +2,7 @@
 A simple todo list app written in javascript and html with basic CSS styling 
 This project makes use of webpack to bundle the code. 
  I implemented 3 functionalities on the this project namely:
- - dd task
+ - Add task
  - edit task
  - delete task 
 
